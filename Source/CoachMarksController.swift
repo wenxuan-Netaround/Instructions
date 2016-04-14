@@ -138,7 +138,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
 
     /// This view will be added to the current `UIWindow` and cover everything.
     /// The overlay and the coachmarks will all be subviews of this property.
-    private var instructionsTopView = UIView()
+    private var instructionsTopView = InstructionsTopView()
 
     /// Sometimes, the chain of coach mark display can be paused
     /// to let animations be performed. `true` to pause the execution,
