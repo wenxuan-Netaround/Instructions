@@ -542,7 +542,14 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
 
     /// Show the next coach mark and hide the current one.
     private func showNextCoachMark(hidePrevious hidePrevious: Bool = true) {
-        self.currentIndex++
+        // ask delegate should show next coach mark
+        if let shouldShowNext = self.delegate?.coachMarksController(self, shouldShowNextCoachMarkWithCurrentIndex: self.currentIndex) {
+            if !shouldShowNext {
+                return
+            }
+        }
+        
+        self.currentIndex += 1
 
         // if `currentIndex` is above 0, that means a previous coach mark
         // is displayed. We call the delegate to notify that the current coach

@@ -30,6 +30,8 @@ public protocol CoachMarksControllerDelegate: class {
 
     func coachMarksController(coachMarksController: CoachMarksController, coachMarkWillDisappear coachMark: CoachMark, forIndex index: Int)
     
+    func coachMarksController(coachMarksController: CoachMarksController, shouldShowNextCoachMarkWithCurrentIndex index: Int) -> Bool
+    
     func didFinishShowingFromCoachMarksController(coachMarksController: CoachMarksController)
 }
 
@@ -41,6 +43,10 @@ public extension CoachMarksControllerDelegate {
     func coachMarksController(coachMarksController: CoachMarksController, inout coachMarkWillShow coachMark: CoachMark, forIndex index: Int) { }
 
     func coachMarksController(coachMarksController: CoachMarksController, coachMarkWillDisappear coachMark: CoachMark, forIndex index: Int) {}
+    
+    func coachMarksController(coachMarksController: CoachMarksController, shouldShowNextCoachMarkWithCurrentIndex index: Int) -> Bool {
+        return true
+    }
 
     func didFinishShowingFromCoachMarksController(coachMarksController: CoachMarksController) {}
 }
