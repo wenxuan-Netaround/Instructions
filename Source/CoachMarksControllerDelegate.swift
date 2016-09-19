@@ -24,29 +24,29 @@ import Foundation
 
 /// Give a chance to react when coach marks are displayed
 public protocol CoachMarksControllerDelegate: class {
-    func coachMarksController(coachMarksController: CoachMarksController, coachMarkWillLoadForIndex index: Int) -> Bool
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkWillLoadForIndex index: Int) -> Bool
 
-    func coachMarksController(coachMarksController: CoachMarksController, inout coachMarkWillShow coachMark: CoachMark, forIndex index: Int)
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkWillShow coachMark: inout CoachMark, forIndex index: Int)
 
-    func coachMarksController(coachMarksController: CoachMarksController, coachMarkWillDisappear coachMark: CoachMark, forIndex index: Int)
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkWillDisappear coachMark: CoachMark, forIndex index: Int)
     
-    func coachMarksController(coachMarksController: CoachMarksController, shouldShowNextCoachMarkWithCurrentIndex index: Int) -> Bool
+    func coachMarksController(_ coachMarksController: CoachMarksController, shouldShowNextCoachMarkWithCurrentIndex index: Int) -> Bool
     
-    func didFinishShowingFromCoachMarksController(coachMarksController: CoachMarksController)
+    func didFinishShowingFromCoachMarksController(_ coachMarksController: CoachMarksController)
 }
 
 public extension CoachMarksControllerDelegate {
-    func coachMarksController(coachMarksController: CoachMarksController, coachMarkWillLoadForIndex index: Int) -> Bool {
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkWillLoadForIndex index: Int) -> Bool {
         return true;
     }
 
-    func coachMarksController(coachMarksController: CoachMarksController, inout coachMarkWillShow coachMark: CoachMark, forIndex index: Int) { }
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkWillShow coachMark: inout CoachMark, forIndex index: Int) { }
 
-    func coachMarksController(coachMarksController: CoachMarksController, coachMarkWillDisappear coachMark: CoachMark, forIndex index: Int) {}
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkWillDisappear coachMark: CoachMark, forIndex index: Int) {}
     
-    func coachMarksController(coachMarksController: CoachMarksController, shouldShowNextCoachMarkWithCurrentIndex index: Int) -> Bool {
+    func coachMarksController(_ coachMarksController: CoachMarksController, shouldShowNextCoachMarkWithCurrentIndex index: Int) -> Bool {
         return true
     }
 
-    func didFinishShowingFromCoachMarksController(coachMarksController: CoachMarksController) {}
+    func didFinishShowingFromCoachMarksController(_ coachMarksController: CoachMarksController) {}
 }
