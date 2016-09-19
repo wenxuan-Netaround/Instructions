@@ -448,7 +448,7 @@ open class CoachMarksController: UIViewController, OverlayViewDelegate {
             self.skipViewAsView?.alpha = 0.0
             self.currentCoachMarkView?.alpha = 0.0
         }, completion: {(finished: Bool) -> Void in
-            self.skipView?.skipControl?.removeTarget(self, action: "skipCoachMarksTour:", for: .touchUpInside)
+            self.skipView?.skipControl?.removeTarget(self, action: #selector(CoachMarksController.skipCoachMarksTour(_:)), for: .touchUpInside)
             self.reset()
             self.detachFromViewController()
 
